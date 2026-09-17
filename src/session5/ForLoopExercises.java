@@ -87,18 +87,39 @@ void E5() {
 
     int input = Integer.parseInt(IO.readln("Enter a number: "));
 
+    for (int i = 1; i < input; i++) { // Makes the rows of the rhombus
 
-    for (int i = 1; i <= input; i++) { // Makes the rows of the rhombus
-        for (int j = input; j > i; j--) {
+
+        for (int j = input / 2 + 1; j > i; j--) {
+            if (i > input / 2 + 1) {
+                break;
+            }
             IO.print(" ");
-    }
-        for (int k = 1; k <= (2 * i - 1); k++) {
+        }
+        for (int k = 1; k <= (i * 2) - 1; k++) {
+            if (i > input / 2 + 1) {
+                break;
+            }
             IO.print("*");
         }
+
+        if (i > (input / 2) + 1) {
+
+            int row = input - i + 1;
+
+        for (int l = (input / 2) +1; l > row; l--) {
+            {
+                IO.print(" ");
+            }
+            for (int m = 1; m <= (row * 2) - 1; m++) {
+                IO.print("*");
+            }
+        }
+    }
         IO.println();
     }
 
-    }
+}
 
 //Exercise 6
 void E6() {
