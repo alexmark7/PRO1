@@ -1,6 +1,6 @@
 void main() {
     //select exercise to run
-    E8();
+    E5();
 
 }
 
@@ -154,14 +154,14 @@ void E8() {
     int input = 0;
     int sum = 0;
 
-    int numbers = Integer.parseInt(IO.readln("How many number to enter?: "));
+    int numbers = Integer.parseInt(IO.readln("How many numbers to enter?: "));
 
     for (int i = 0; i < numbers; i++) {
         input = Integer.parseInt(IO.readln("Enter number " + (i+1) + ": "));
         sum += input;
     }
 
-    IO.println("The sum is:" + sum);
+    IO.println("The sum is: " + sum);
 
     double average = (double) sum;
     IO.println("The average is: " + (average/numbers));

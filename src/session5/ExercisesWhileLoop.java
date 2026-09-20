@@ -1,6 +1,6 @@
 void main() {
     //select exercise to run
-    E15();
+    E13();
 
 }
 
@@ -316,6 +316,7 @@ void E13() {
 
         if (computerGuess == randomNumber) {
             IO.println("The computer guessed correctly! It guessed it in: " + guessCounter + " guesses!");
+            IO.println("My number was: " + computerNumber);
             break;
         } else {
             if (randomNumber < computerGuess) {
@@ -404,8 +405,6 @@ void E14() {
 
             String playAgain = IO.readln("Play again? (y/n)");
             if (playAgain.equals("y")) {
-                playerScore = 0;
-                computerScore = 0;
                 break;
             } else if (playAgain.equals("n")) {
                 endGame++;
