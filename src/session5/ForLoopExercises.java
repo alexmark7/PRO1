@@ -1,6 +1,6 @@
 void main() {
     //select exercise to run
-    E5();
+    E8();
 
 }
 
@@ -85,57 +85,84 @@ void E4() {
 //Exercise 5 - Print a Rhombus of asterisks
 void E5() {
 
+
     int input = Integer.parseInt(IO.readln("Enter a number: "));
 
-    for (int i = 1; i < input; i++) { // Makes the rows of the rhombus
+    if (input % 2 == 0) {
+        IO.println("Can't be an even number");
+    } else {
 
+        // Makes the rows of the rhombus top half
+        for (int i = 1; i <= input / 2 + 1; i++) {
 
-        for (int j = input / 2 + 1; j > i; j--) {
-            if (i > input / 2 + 1) {
-                break;
-            }
-            IO.print(" ");
-        }
-        for (int k = 1; k <= (i * 2) - 1; k++) {
-            if (i > input / 2 + 1) {
-                break;
-            }
-            IO.print("*");
-        }
-
-        if (i > (input / 2) + 1) {
-
-            int row = input - i + 1;
-
-        for (int l = (input / 2) +1; l > row; l--) {
-            {
+            // makes the spaces for the top half
+            for (int j = input / 2 + 1; j > i; j--) {
                 IO.print(" ");
             }
-            for (int m = 1; m <= (row * 2) - 1; m++) {
+            // makes the stars for the top half
+            for (int k = 1; k <= (i * 2) - 1; k++) {
                 IO.print("*");
             }
+            IO.println();
+        }
+        // Makes the rows of the rhombus bottom half
+        for (int i = 1; i <= input / 2; i++) {
+
+            // makes the spaces for the lower half
+            for (int j = 1; j <= i; j++) {
+                IO.print(" ");
+            }
+            // makes the stars for the lower half
+            for (int k = 1; k <= input - (i * 2); k++)
+                IO.print("*");
+
+            IO.println();
         }
     }
-        IO.println();
-    }
-
 }
 
 //Exercise 6
 void E6() {
 
+    int input = Integer.parseInt(IO.readln("Enter a number: "));
+    int oldNumber = 1;
+    int newNumber = 0;
 
+    for (int i = 0; i < input && input >= newNumber; i++) {
+        IO.println(newNumber);
+        newNumber = newNumber + oldNumber;
+        oldNumber = newNumber - oldNumber;
+
+    }
 }
 
 
 //Exercise 7
 void E7() {
 
+    String input = IO.readln("Enter a String: ").trim();
+
+    for (int i = 0; i < input.length(); i++) {
+        IO.print(input.charAt(input.length() - i - 1));
+    }
 
 }
 
 //Exercise 8
 void E8() {
 
+    int input = 0;
+    int sum = 0;
 
+    int numbers = Integer.parseInt(IO.readln("How many number to enter?: "));
+
+    for (int i = 0; i < numbers; i++) {
+        input = Integer.parseInt(IO.readln("Enter number " + (i+1) + ": "));
+        sum += input;
+    }
+
+    IO.println("The sum is:" + sum);
+
+    double average = (double) sum;
+    IO.println("The average is: " + (average/numbers));
 }
