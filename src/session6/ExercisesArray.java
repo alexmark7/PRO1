@@ -255,5 +255,5 @@ void E10 () {
     for (int index = 0; index < fruit.length; index++) {
         formattedString[index] = fruit[index].substring(0,1).toUpperCase() + fruit[index].substring(1);
     }
-    IO.println("Formatted Fruits: " + String.join(". ", formattedString));
+    IO.println("Formatted Fruits: " + String.join(". ", formattedString) + ".");
 }
