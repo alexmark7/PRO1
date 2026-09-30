@@ -110,8 +110,8 @@ void main() throws IOException {
             }
         }
         if (won) {
+            IO.println();
             printWin();
-            IO.println("The word was: " + randomWord);
             break;
         }
 
