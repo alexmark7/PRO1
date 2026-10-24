@@ -25,12 +25,12 @@ public class Detective {
     }
 
     public void solveCase(){
-        IO.println("Case Solved");
+        currentCase.setStatus("SOLVED!");
     }
 
     @Override
     public String toString() {
-        return name + " - " + badgeNumber + " - Reporting for duty";
+        return badgeNumber + " " + name ;
     }
 
 

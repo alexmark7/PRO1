@@ -1,6 +1,6 @@
 package session11;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Case {
@@ -13,6 +13,8 @@ public class Case {
     public Case(String caseNumber, String crimeType){
         this.caseNumber = caseNumber;
         this.crimeType = crimeType;
+        this.evidence = new ArrayList<>();
+        this.status = "Under Investigation";
 
     }
 
@@ -25,15 +27,15 @@ public class Case {
     }
 
     public void addEvidence(String evidence){
-       this.evidence = Collections.singletonList(evidence);
+       this.evidence.add(evidence);
     }
 
     public List<String> getEvidence() {
         return evidence;
     }
 
-    public void setStatus(String Status){
-        return;
+    public void setStatus(String status){
+        this.status = status;
     }
 
     public String getStatus() {
