@@ -1,4 +1,4 @@
-package session12.Superheroes;
+package session12.SuperHeroes;
 
 public class FireHero extends ElementalHero {
     public FireHero() {
