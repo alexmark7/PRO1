@@ -6,9 +6,9 @@ public class SuperheroTeam {
     private String teamName;
     private ArrayList<Superhero> superheroes;
 
-    public SuperheroTeam(String teamName, ArrayList<Superhero> superheroes) {
+    public SuperheroTeam(String teamName) {
         this.teamName = teamName;
-        this.superheroes = new ArrayList<>(superheroes);
+        this.superheroes = new ArrayList<>();
     }
 
     public void addSuperhero(Superhero superhero) {
@@ -70,7 +70,7 @@ public class SuperheroTeam {
     public void elementalAttack() {
         for (Superhero superhero : superheroes) {
             if (superhero instanceof ElementalHero) {
-                superhero.attack();
+                ((ElementalHero) superhero).elementalAttack();
             }
         }
     }
@@ -78,7 +78,7 @@ public class SuperheroTeam {
     public void physicalAttack() {
         for (Superhero superhero : superheroes) {
             if (superhero instanceof PhysicalHero) {
-                superhero.attack();
+                ((PhysicalHero) superhero).physicalAttack();
             }
         }
     }
@@ -86,7 +86,7 @@ public class SuperheroTeam {
     public void mentalAttack() {
         for (Superhero superhero : superheroes) {
             if (superhero instanceof MentalHero) {
-                superhero.attack();
+                ((MentalHero) superhero).mentalAttack();
             }
         }
     }

@@ -1,13 +1,13 @@
 package session12.SuperHeroes;
 
 public class Superhero {
-    private int powerLevel;
+    protected String heroName;
+    protected String secretIdentity;
+    protected int powerLevel;
 
-    public Superhero() {
-        this(0);
-    }
-
-    public Superhero(int powerLevel) {
+    public Superhero(String heroName, String secretIdentity, int powerLevel) {
+        this.heroName = heroName;
+        this.secretIdentity = secretIdentity;
         this.powerLevel = powerLevel;
     }
 
@@ -16,11 +16,15 @@ public class Superhero {
     }
 
     public void attack() {
-        System.out.println(getClass().getSimpleName() + " attacks!");
+        System.out.println(heroName + " attacks!");
+    }
+
+    public void saveDay() {
+        System.out.println(heroName + "'s saves the day!");
     }
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + "{powerLevel=" + powerLevel + "}";
+        return getClass().getSimpleName() + "{heroName='" + heroName + "', powerLevel=" + powerLevel + "}";
     }
 }
