@@ -1,0 +1,4 @@
+Welcome to Java File I/O!
+Today's date: 2026-11-08
+Temperature: 23,5 degrees
+Status: Active

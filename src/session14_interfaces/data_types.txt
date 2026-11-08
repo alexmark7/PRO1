@@ -1,0 +1,7 @@
+Hello World
+42
+19.99
+19,99
+true
+2026-11-08T18:22:51.990536592
+Added to the file using PrintWriter.
