@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class TextWriter {
     public static void main(String[] args) {
         // Safe text writer
-        try (FileWriter writer = new FileWriter("src/session14_interfaces/output.txt")) {
+        try (FileWriter writer = new FileWriter("src/session15_file_io/output.txt")) {
             writer.write("Hello World!");
             writer.write("\nThis is line 2");
             writer.write("\nThis is line 3");
@@ -20,7 +20,7 @@ public class TextWriter {
         } catch (IOException e) {
             IO.println("Error writing file: " + e.getMessage());
         }
-        try (FileWriter writer = new FileWriter("src/session14_interfaces/output.txt", true)) {
+        try (FileWriter writer = new FileWriter("src/session15_file_io/output.txt", true)) {
             writer.write("\nThis is line 4");
             writer.write("\nThis is line 5");
             IO.println("Lines added to output file successfully!");
@@ -30,13 +30,13 @@ public class TextWriter {
 
         try {
             // Read all lines from the file
-            List<String> lines = Files.readAllLines(Paths.get("src/session14_interfaces/output.txt"));
+            List<String> lines = Files.readAllLines(Paths.get("src/session15_file_io/output.txt"));
 
             // Insert new line at position 2 (0-based index)
             lines.add(2, "This line was inserted in the middle!");
 
             // Write all lines back to the file
-            try (PrintWriter writer = new PrintWriter(new FileWriter("src/session14_interfaces/output.txt"))) {
+            try (PrintWriter writer = new PrintWriter(new FileWriter("src/session15_file_io/output.txt"))) {
                 for (String line : lines) {
                     writer.println(line);
                 }
@@ -50,7 +50,7 @@ public class TextWriter {
 
         // PrintWriter
         try {
-            FileWriter fileWriter = new FileWriter("src/session14_interfaces/greeting.txt");
+            FileWriter fileWriter = new FileWriter("src/session15_file_io/greeting.txt");
             PrintWriter printWriter = new PrintWriter(fileWriter);
 
             printWriter.println("Welcome to Java File I/O!");
@@ -65,7 +65,7 @@ public class TextWriter {
             System.out.println("Error writing file: " + e.getMessage());
         }
         // Writing Different Data Types
-        try (PrintWriter writer = new PrintWriter(new FileWriter("src/session14_interfaces/data_types.txt"))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("src/session15_file_io/data_types.txt"))) {
 
             // String — println(String)
             writer.println("Hello World");
@@ -93,7 +93,7 @@ public class TextWriter {
             System.out.println("Error: " + e.getMessage());
         }
 
-        try (PrintWriter writer = new PrintWriter(new FileWriter("src/session14_interfaces/data_types.txt", true))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("src/session15_file_io/data_types.txt", true))) {
             writer.println("Added to the file using PrintWriter.");
 
         } catch (IOException e) {
@@ -102,7 +102,7 @@ public class TextWriter {
 
 
         {
-            Path filePath = Paths.get("src/session14_interfaces/output.txt");
+            Path filePath = Paths.get("src/session15_file_io/output.txt");
 
             if (Files.exists(filePath)) {
                 System.out.println("File exists!");
@@ -112,24 +112,24 @@ public class TextWriter {
         }
 
         try {
-            Files.createDirectories(Paths.get("src/session14_interfaces/myNewParentFolder/myNewChildFolder/MyNewGrandChildFolder"));
+            Files.createDirectories(Paths.get("src/session15_file_io/myNewParentFolder/myNewChildFolder/MyNewGrandChildFolder"));
             System.out.println("Folder created successfully!");
         } catch (IOException e) {
             System.out.println("Error creating folder: " + e.getMessage());
         }
 
-        if (Files.exists(Path.of("src/session14_interfaces/myNewParentFolder/myNewChildFolder"))) {
+        if (Files.exists(Path.of("src/session15_file_io/myNewParentFolder/myNewChildFolder"))) {
             System.out.println("Folder already exists!");
         } else {
             try {
-                Files.createDirectories(Path.of("src/session14_interfaces/myNewParentFolder/myNewChildFolder"));
+                Files.createDirectories(Path.of("src/session15_file_io/myNewParentFolder/myNewChildFolder"));
                 System.out.println("Folder created successfully!");
             } catch (IOException e) {
                 System.out.println("Error: " + e.getMessage());
             }
         }
 
-        try (BufferedReader reader = new BufferedReader(new FileReader("src/session14_interfaces/output.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/session15_file_io/output.txt"))) {
             String line;
             IO.println();
             while ((line = reader.readLine()) != null) {
@@ -141,9 +141,9 @@ public class TextWriter {
 
         // Serialize one Person object
         Person person = new Person("John Doe", 25, "john@example.com");
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("src/session14_interfaces/person.bin"))) {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("src/session15_file_io/person.bin"))) {
             outputStream.writeObject(person);
-            System.out.println("Person saved to src/session14_interfaces/person.bin");
+            System.out.println("Person saved to src/session15_file_io/person.bin");
         } catch (IOException e) {
             System.out.println("Error saving person: " + e.getMessage());
         }
@@ -153,24 +153,24 @@ public class TextWriter {
         people.add(person);
         people.add(new Person("Jane Doe", 30, "jane@example.com"));
 
-        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("src/session14_interfaces/people.bin"))) {
+        try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("src/session15_file_io/people.bin"))) {
             outputStream.writeObject(people);
-            System.out.println("People saved to src/session14_interfaces/people.bin");
+            System.out.println("People saved to src/session15_file_io/people.bin");
         } catch (IOException e) {
             System.out.println("Error saving people: " + e.getMessage());
         }
 
         // Read one Person object from the binary file
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("src/session14_interfaces/person.bin"))) {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("src/session15_file_io/person.bin"))) {
             Person loadedPerson = (Person) inputStream.readObject();
-            System.out.println("\nPerson loaded from src/session14_interfaces/person.bin:");
+            System.out.println("\nPerson loaded from src/session15_file_io/person.bin:");
             System.out.println(loadedPerson);
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Error loading person: " + e.getMessage());
         }
 
         // Read a list of Person objects from the binary file
-        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("src/session14_interfaces/people.bin"))) {
+        try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("src/session15_file_io/people.bin"))) {
             List<Person> loadedPeople = (List<Person>) inputStream.readObject();
             System.out.println("\nLoaded " + loadedPeople.size() + " people:");
             for (int i = 0; i < loadedPeople.size(); i++) {
