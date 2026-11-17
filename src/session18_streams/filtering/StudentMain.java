@@ -117,7 +117,6 @@ public class StudentMain {
        return s.getAverage() >= 6.0;
     }
 
-
 }
 
 
