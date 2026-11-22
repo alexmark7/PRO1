@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Calculator" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="session17_javafx.Calculator.StartUp" />
+    <option name="VM_PARAMETERS" value="--enable-native-access=javafx.graphics" />
+    <module name="PRO1" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
